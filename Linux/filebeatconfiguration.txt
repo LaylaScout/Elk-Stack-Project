@@ -1,0 +1,34 @@
+  GNU nano 4.8              metricbeat-config.yml                         
+###################### Metricbeat Configuration Example #################>
+
+# This file is an example configuration file highlighting only the most c>
+# options. The metricbeat.reference.yml file from the same directory cont>
+# supported options with more comments. You can use it as a reference.
+#
+# You can find the full configuration reference here:
+# https://www.elastic.co/guide/en/beats/metricbeat/index.html
+
+#==========================  Modules configuration ======================>
+
+metricbeat.config.modules:
+  # Glob pattern for configuration loading
+  path: ${path.config}/modules.d/*.yml
+
+  # Set to true to enable config reloading
+  reload.enabled: false
+
+  # Period on which files under path should be checked for changes
+  #reload.period: 10s
+
+#==================== Elasticsearch template setting ====================>
+
+setup.template.settings:
+  index.number_of_shards: 1
+  index.codec: best_compression
+  #_source.enabled: false
+
+#================================ General ===============================>
+                            [ Read 165 lines ]
+^G Get Help   ^O Write Out  ^W Where Is   ^K Cut Text   ^J Justify
+^X Exit       ^R Read File  ^\ Replace    ^U Paste Text ^T To Spell
+

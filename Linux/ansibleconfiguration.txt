@@ -1,0 +1,35 @@
+  GNU nano 4.8                                                             ansible.cfg                                                                       
+# that close the connection after a key failure.  Uncomment this line to
+# disable the Paramiko look for keys function
+#look_for_keys = False
+
+# When using persistent connections with Paramiko, the connection runs in a
+# background process.  If the host doesn't already have a valid SSH key, by
+# default Ansible will prompt to add the host key.  This will cause connections
+# running in background processes to fail.  Uncomment this line to have
+# Paramiko automatically add host keys.
+#host_key_auto_add = True
+
+[ssh_connection]
+
+# ssh arguments to use
+# Leaving off ControlPersist will result in poor performance, so use
+# paramiko on older platforms rather than removing it, -C controls compression use
+#ssh_args = -C -o ControlMaster=auto -o ControlPersist=60s
+
+# The base directory for the ControlPath sockets.
+# This is the "%(directory)s" in the control_path option
+#
+# Example:
+# control_path_dir = /tmp/.ansible/cp
+#control_path_dir = ~/.ansible/cp
+
+# The path to use for the ControlPath sockets. This defaults to a hashed string of the hostname,
+# port and username (empty string in the config). The hash mitigates a common problem users
+# found with long hostnames and the conventional %(directory)s/ansible-ssh-%%h-%%p-%%r format.
+# In those cases, a "too long for Unix domain socket" ssh error would occur.
+#
+
+^G Get Help      ^O Write Out     ^W Where Is      ^K Cut Text      ^J Justify       ^C Cur Pos       M-U Undo         M-A Mark Text    M-] To Bracket
+^X Exit          ^R Read File     ^\ Replace       ^U Paste Text    ^T To Spell      ^_ Go To Line    M-E Redo         M-6 Copy Text    ^Q Where Was
+
